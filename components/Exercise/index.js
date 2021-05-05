@@ -24,7 +24,9 @@ export default function Exercise(props) {
       }
     }
 
-    return filteredScores[bestScoreIndex].value;
+    return filteredScores[bestScoreIndex].type === 0
+      ? filteredScores[bestScoreIndex].formattedValue
+      : filteredScores[bestScoreIndex].value;
   };
 
   let bestScore = getBiggestValue();
